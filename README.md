@@ -3,7 +3,7 @@
 There is no build step, clone the repo and install dependencies:
 
 ```
-git clone URL
+git clone git@github.com:adrianfaciu/trackify.git
 yarn install
 ```
 
