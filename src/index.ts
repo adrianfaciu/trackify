@@ -10,14 +10,19 @@ import {
   startOfToday,
   addDays,
 } from "date-fns";
+import fs from "fs";
 
 import config from "../config.json";
-
-const clockify = new Clockify(config.API_KEY);
 
 async function main() {
   if (!shouldLogTimeEntry()) {
     process.exit(0);
+  }
+
+  // Handle local config, if there is one
+  if (fs.existsSync("../config.local.json")) {
+    const localConfig = await (await import("../config.local.json")).default;
+    Object.assign(config, localConfig);
   }
 
   const { userWorkspace, userProject } = await getWorkspaceAndProject();
@@ -29,6 +34,8 @@ async function main() {
 main();
 
 function logTime(workspace: WorkspaceType, project: ProjectType) {
+  const clockify = new Clockify(config.API_KEY);
+
   const timeEntry: NewTimeEntryType = {
     start: addHours(startOfToday(), 9),
     end: addHours(startOfToday(), 17),
@@ -71,6 +78,8 @@ function shouldLogTimeEntry() {
 }
 
 async function getWorkspaceAndProject() {
+  const clockify = new Clockify(config.API_KEY);
+
   const workspaces = await clockify.workspace.get();
   const userWorkspace = workspaces.find(
     (proj) => proj.name.toLowerCase() === config.WORKSPACE_NAME.toLowerCase()
