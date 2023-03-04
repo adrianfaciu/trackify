@@ -1,0 +1,18 @@
+{
+  "name": "trackify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "clockify-ts": "^1.2108.13",
+    "date-fns": "^2.29.3"
+  }
+}

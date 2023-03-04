@@ -1,0 +1,73 @@
+{
+  "API_KEY": "MjI0ZjE3OTtMTdiNyabcsdhfujeNTktMTEyODZnotworking",
+  "PROJECT_NAME": "kung fu",
+  "WORKSPACE_NAME": "WeVideo workspace",
+  "VACATION": [
+    {
+      "date": "2023-08-01",
+      "duration": 7
+    }
+  ],
+  "PUBLIC_HOLIDAYS": [
+    {
+      "name": "New Year's Day",
+      "date": "2023-01-01"
+    },
+    {
+      "name": "New Year's Day",
+      "date": "2023-01-02"
+    },
+    {
+      "name": "Ziua Unirii Principatelor Române",
+      "date": "2023-01-24"
+    },
+    {
+      "name": "Vinerea Mare",
+      "date": "2023-04-14"
+    },
+    {
+      "name": "Paște ortodox",
+      "date": "2023-04-16"
+    },
+    {
+      "name": "Paște ortodox",
+      "date": "2023-04-17"
+    },
+    {
+      "name": "Ziua Muncii",
+      "date": "2023-05-01"
+    },
+    {
+      "name": "Ziua Copilului",
+      "date": "2023-06-01"
+    },
+    {
+      "name": "Rusalii",
+      "date": "2023-06-04"
+    },
+    {
+      "name": "A doua zi de Rusalii",
+      "date": "2023-06-05"
+    },
+    {
+      "name": "Adormirea Maicii Domnului",
+      "date": "2023-08-15"
+    },
+    {
+      "name": "Sfântul Andrei",
+      "date": "2023-11-30"
+    },
+    {
+      "name": "Ziua Națională a României",
+      "date": "2023-12-01"
+    },
+    {
+      "name": "Crăciunul",
+      "date": "2023-12-25"
+    },
+    {
+      "name": "Crăciunul",
+      "date": "2023-12-26"
+    }
+  ]
+}
