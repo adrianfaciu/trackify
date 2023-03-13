@@ -11,6 +11,7 @@ import {
   addDays,
 } from "date-fns";
 import fs from "fs";
+import path from "path";
 
 import config from "../config.json";
 
@@ -19,11 +20,8 @@ async function main() {
     process.exit(0);
   }
 
-  // Handle local config, if there is one
-  if (fs.existsSync("../config.local.json")) {
-    const localConfig = await (await import("../config.local.json")).default;
-    Object.assign(config, localConfig);
-  }
+  await handleLocalConfig();
+  console.log("Using config: ", config);
 
   const { userWorkspace, userProject } = await getWorkspaceAndProject();
   await logTime(userWorkspace, userProject);
@@ -32,6 +30,20 @@ async function main() {
 }
 
 main();
+
+async function handleLocalConfig() {
+  const localConfigPath = path.resolve(__dirname, "../config.local.json");
+  console.log("Path: ", localConfigPath);
+  if (fs.existsSync(localConfigPath)) {
+    const localConfig = await import(localConfigPath, {
+      assert: {
+        type: "json",
+      },
+    });
+
+    Object.assign(config, localConfig?.default);
+  }
+}
 
 function logTime(workspace: WorkspaceType, project: ProjectType) {
   const clockify = new Clockify(config.API_KEY);
