@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "clockify-ts": "^1.2108.13",
-    "date-fns": "^2.29.3"
+    "date-fns": "^2.30.0"
   }
 }
